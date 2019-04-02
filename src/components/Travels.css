@@ -1,0 +1,17 @@
+.picture {
+  width: 50%;
+  height : 50%;
+}
+
+.Work h1.applying {
+  color:red;
+	animation      : flash 3s infinite;
+}	
+
+.Work h1.notApplying{
+  color:green;
+}
+
+@keyframes flash {
+		from { opacity: 1;} to { opacity: 0;}
+}

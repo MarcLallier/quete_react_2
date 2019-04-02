@@ -40,25 +40,44 @@ const voyages  = [
 ]
 
 
-const Travels =()=>{
- return (
+class Travels extends React.Component {
+  state={
+  apply : ""
+  }
+  
+  colorChange = () =>{
+    return this.setState({apply : !this.state.apply})
+  }
+  
+  render(){
+    
+    
+   const work = this.state.apply ? "applying" : "notApplying"
+ 
+ 
+    return (
           <div>
               { voyages.map ( voyage =>  
                <div>
-               <h1> 
+                 <div className="Work">
+                 <button className = {work} onClick = {this.colorChange} > Click On Me</button>
+                
+               <h1 className={work}> 
                   J'aimerais aller à {voyage.destination}
                 </h1>
+                </div>
                 <h1> 
                    qui est à {voyage.distance}
                 </h1>
                 <h1>
                    dans le pays {voyage.country}
                 </h1>
-                <img src = {voyage.landscape} alt = "trip"
+                <img className = "picture"
+                src = {voyage.landscape} alt = "trip"
                 />
                 </div>
                 )}
           </div>
           )}
-
+              }
 export default Travels
